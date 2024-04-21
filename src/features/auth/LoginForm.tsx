@@ -1,4 +1,4 @@
-import { FaEnvelope, FaGithub } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
 import Input from "../../ui/Input";
 
 import PasswordInput from "../../ui/PasswordInput";
@@ -7,11 +7,8 @@ import { signupValidation, ValidationSignUp } from "../../helpers/validation";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { MdPassword } from "react-icons/md";
-import OrSection from "../../ui/OrSection";
-import { FcGoogle } from "react-icons/fc";
-import SignInWithThirdParty from "../../ui/SignInWithThirdParty";
 
-export default function SignupForm() {
+export default function LoginForm() {
   function onSubmitSignupForm(data: ValidationSignUp) {
     console.log(data);
   }
@@ -38,30 +35,18 @@ export default function SignupForm() {
         whileTap={{ scale: 0.9 }}
         className="flex items-center justify-center w-full py-3 rounded-xl hover:bg-emerald-400 cursor-pointer bg-emerald-500 text-xl text-white"
       >
-        Sign Up
+        Login
       </motion.button>
 
       <p className="text-sm text-primaryText flex items-center gap-2 justify-center">
-        Already have an account?{" "}
-        <Link className="text-emerald-500 cursor-pointer underline" to="/login">
-          Login here
+        Don't have an account?{" "}
+        <Link
+          className="text-emerald-500 cursor-pointer underline"
+          to="/signup"
+        >
+          Sign up
         </Link>
       </p>
-
-      <OrSection />
-
-      <SignInWithThirdParty
-        text="Sign in with Google"
-        icon={<FcGoogle className="text-3xl" />}
-        onClick={() => {}}
-      />
-      <OrSection />
-
-      <SignInWithThirdParty
-        text="Sign in with Github"
-        onClick={() => {}}
-        icon={<FaGithub className="text-3xl text-white" />}
-      />
     </FormLayout>
   );
 }

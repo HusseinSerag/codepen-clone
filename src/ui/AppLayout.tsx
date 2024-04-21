@@ -6,6 +6,7 @@ import { HiChevronDoubleLeft } from "react-icons/hi2";
 import { motion } from "framer-motion";
 import { MdHome } from "react-icons/md";
 import { FaSearchengin } from "react-icons/fa";
+import Logo from "./Logo";
 export default function AppLayout() {
   const [sideMenuOpen, setSideMenuOpen] = useState(false);
   const [user, setUser] = useState();
@@ -28,16 +29,12 @@ export default function AppLayout() {
         </motion.div>
         <div className="overflow-hidden w-full flex flex-col gap-4">
           <Link to="/">
-            <img
-              src="/codepen-wordmark-white.webp"
-              alt="logo"
-              className="object-contain m-auto w-72 h-auto"
-            />
+            <Logo size={288} />
           </Link>
 
           <Link to="/newProject">
             <div className="px-6 py-3 flex items-center justify-center rounded-xl border border-gray-400 cursor-pointer group hover:border-gray-200">
-              <p className="text-gray-400 group-hover:text-gray-200 capitalize">
+              <p className="text-gray-400 text-center group-hover:text-gray-200 capitalize">
                 Start Coding!
               </p>
             </div>
