@@ -10,6 +10,7 @@ import { MdPassword } from "react-icons/md";
 import OrSection from "../../ui/OrSection";
 import { FcGoogle } from "react-icons/fc";
 import SignInWithThirdParty from "../../ui/SignInWithThirdParty";
+import { signInWithGoogle } from "../../services/authApi";
 
 export default function SignupForm() {
   function onSubmitSignupForm(data: ValidationSignUp) {
@@ -53,7 +54,7 @@ export default function SignupForm() {
       <SignInWithThirdParty
         text="Sign in with Google"
         icon={<FcGoogle className="text-3xl" />}
-        onClick={() => {}}
+        onClick={signInWithGoogle}
       />
       <OrSection />
 
